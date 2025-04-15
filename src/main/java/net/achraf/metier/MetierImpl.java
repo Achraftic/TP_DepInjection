@@ -1,8 +1,16 @@
 package net.achraf.metier;
 
 import net.achraf.dao.Idao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
+@Service("metier")
 public class MetierImpl implements IMetier {
+
+    @Autowired
+    @Qualifier("d")
     private Idao dao; //couplage faible
 
     public MetierImpl(Idao dao) {
